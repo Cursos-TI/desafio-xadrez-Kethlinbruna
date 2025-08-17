@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+// --- Requisito: Entrada de Dados ---
+// Utilização de constantes para definir os valores de movimento,
+// evitando repetição e facilitando a manutenção do código.
+const int MOVIMENTOS_BISPO = 5;
+const int MOVIMENTOS_TORRE = 5;
+const int MOVIMENTOS_RAINHA = 8;
+
+int main() {
+    
+    // --- Movimentação do Bispo ---
+    // Objetivo: Mover 5 casas na diagonal superior direita.
+    // Estrutura de Repetição: Loop 'for', ideal para um número fixo e conhecido de iterações.
+    printf("--- Movimentacao do Bispo (5 passos na diagonal superior direita) ---\n");
+    
+    // O loop começa em 1 e continua enquanto 'passo' for menor ou igual a MOVIMENTOS_BISPO.
+    for (int passo = 1; passo <= MOVIMENTOS_BISPO; passo++) {
+        printf("Passo %d:\n", passo);
+        // A condição do desafio para o movimento diagonal do bispo é simular
+        // a combinação de dois movimentos básicos.
+        printf("  Cima\n");
+        printf("  Direita\n");
+    }
+    printf("\n"); // Adiciona uma linha em branco para melhor legibilidade
+
+    // --- Movimentação da Torre ---
+    // Objetivo: Mover 5 casas para a direita.
+    // Estrutura de Repetição: Loop 'while', que verifica a condição antes de cada iteração.
+    printf("--- Movimentacao da Torre (5 passos para a direita) ---\n");
+    
+    int contador_torre = 0; // Variável de controle para o loop
+    
+    // O loop continua enquanto o contador for menor que o número de movimentos definidos.
+    while (contador_torre < MOVIMENTOS_TORRE) {
+        // Imprime o passo (contador + 1 para começar a contagem em 1 para o usuário)
+        printf("Passo %d:\n", contador_torre + 1);
+        printf("  Direita\n");
+        
+        contador_torre++; // Incrementa o contador para evitar um loop infinito
+    }
+    printf("\n"); // Adiciona uma linha em branco
+
+    // --- Movimentação da Rainha ---
+    // Objetivo: Mover 8 casas para a esquerda.
+    // Estrutura de Repetição: Loop 'do-while', que executa o bloco de código pelo menos uma vez
+    // e depois verifica a condição.
+    printf("--- Movimentacao da Rainha (8 passos para a esquerda) ---\n");
+    
+    int contador_rainha = 0; // Variável de controle para o loop
+    
+    do {
+        // Imprime o passo
+        printf("Passo %d:\n", contador_rainha + 1);
+        printf("  Esquerda\n");
+        
+        contador_rainha++; // Incrementa o contador
+        
+    } while (contador_rainha < MOVIMENTOS_RAINHA); // A condição é verificada no final do loop.
+    
+    return 0; // Indica que o programa foi executado com sucesso
+}
